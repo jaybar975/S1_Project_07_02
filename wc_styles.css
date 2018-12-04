@@ -18,41 +18,46 @@
 
 
 /* Import Design Styles */
-@import url(wc_designs.css) screen;
+/* This imports the file called wc_designs.css into the CSS style sheet */
+@import url("wc_designs.css") only screen;
 
 
 /* Flex Layout Styles */
+/* This sets the body element with a display of webkit flex, a display of flex, a webkit flex flow of row wrap and a flex flow of row wrap */
 body {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
+
 }
 
+/* This sets the navigation element with a id called hole_list with a flex of 1 3 140 pixels */
 nav#hole_list {
-    -webkit-flex: 1 3 140px;
     flex: 1 3 140px;
 }
 
+/* This sets the article element with a flex of 3 1 341 pixels, a display of flex, a display of webkit flex, and a flex flow of row wrap */
 article {
-    -webkit-flex: 1 3 341px;
-    flex: 1 3 341px;
-    display: -webkit-flex;
+    flex: 3 1 341px;
     display: flex;
-    -webkit-flex-flow: row wrap;
+    display: -webkit-flex;
     flex-flow: row wrap;
 }
 
-section#stats {
+/* This sets the article and section element with a id called stats with a webkit flex of 1 4 120 pixels and a flex of 1 4 120 pixels */
+article section#stats {
     -webkit-flex: 1 4 120px;
     flex: 1 4 120px;
 }
 
-section#summary {
+/* This sets the article and section element with a id of summary with a webkit flex of 1 4 120 pixels and a flex of 1 4 361 pixels */
+article section#summary {
     -webkit-flex: 1 4 120px;
     flex: 1 4 361px;
 }
 
+/* This sets the aside element with a display of webkit flex, a display of flex, a webkit flex flow to row wrap, and flex flow to row wrap */
 aside {
     display: -webkit-flex;
     display: flex;
@@ -60,6 +65,7 @@ aside {
     flex-flow: row wrap;
 }
 
+/* This sets the asdie and div element with a webkit flex of 1 1 180 pixels and a flex of 1 1 180 pixels */
 aside div {
     -webkit-flex: 1 1 180px;
     flex: 1 1 180px;
@@ -69,49 +75,56 @@ aside div {
 	Mobile Styles: 0 - 480 pixels
    =============================
 */
+/* This sets the @ media query with a only screen and a max width of 480 pixels */
 @media only screen and (max-width: 480px) {
-    #hole_list {
-        -webkit-order: 99;
+
+    /* This sets the navigation element with a id of hole_list with a order of 99 */
+    nav#hole_list {
         order: 99;
     }
 
+    /* THis sets the footer element with a order of 100 */
     footer {
-        -webkit-order: 100;
         order: 100;
     }
 
+    /* This sets the navigation element with a class of horizontal and a unorder list element with a display of none */
     nav.horizontal ul {
         display: none;
     }
 
+    /* This sets the a element with a id of navicon with a psuedo class of hover plus the unorder list element, with a navigation list element with a class of horizontal and unordered list element with a psuedo class of hover with a display of block */
     a#navicon:hover+ul,
-    nav.horizontal>ul:hover {
+    nav.horizontal ul:hover {
         display: block;
     }
 
+    /* This sets the aside element with a display of none */
     aside {
         display: none;
     }
+}
 
-    /* =================================================
+/* =================================================
 	Tablet and Desktop Styles: 481 pixels and greater
    =================================================
 */
-    @media only screen and (min-width: 481px) {}
+/*  This sets the @ media query with a only screen and a min width of 481 pixels */
+@media only screen and (min-width: 481px) {
 
-    nav.horizontal>a#navicon {
+    /* This sets the a element with a id of navicon with a display of none */
+    a#navicon {
         display: none;
     }
 
-    nav.horizontal>ul {
-        display: -webkit-flex;
+    /* This sets the navigation element with a class of horizontal and the unordered list with a display of flex and a flex fllow to row nowrap */
+    nav.horizontal ul {
         display: flex;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
     }
 
-    nav.horizontal li {
-        -webkit-flex: 1 1 auto;
+    /* This sets the navigation element with a class of horizontal with the unordered list and listed element with a flex of 1 1 auto  */
+    nav.horizontal ul li {
         flex: 1 1 auto;
     }
 }
